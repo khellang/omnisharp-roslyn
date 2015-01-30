@@ -52,7 +52,6 @@ namespace OmniSharp
 
             
             return _completions
-                .Distinct()
                 .OrderByDescending(c => c.CompletionText.IsValidCompletionStartsWithExactCase(wordToComplete))
                 .ThenByDescending(c => c.CompletionText.IsValidCompletionStartsWithIgnoreCase(wordToComplete))
                 .ThenByDescending(c => c.CompletionText.IsCamelCaseMatch(wordToComplete))
